@@ -3,8 +3,8 @@ const db = require("./db")
 async function criar_tabelas() {
     try {
         await db.pool.query(`
-            DROP TABLE IF EXISTS cliente;
-            CREATE TABLE cliente (
+            DROP TABLE IF EXISTS Cliente;
+            CREATE TABLE Cliente (
                     id int(11) NOT NULL AUTO_INCREMENT,
                     nome varchar(100) NOT NULL,
                     cpf char(14) NOT NULL,
@@ -15,7 +15,7 @@ async function criar_tabelas() {
                     UNIQUE KEY cpf (cpf),
                     UNIQUE KEY email (email)
                 ) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-            INSERT INTO cliente VALUES 
+            INSERT INTO Cliente VALUES 
             (11, 'Natasha Matos', '712.669.552-93', '(42)99820-7398', 'natashaquero0508@gmail.com', '123456'),
             (13, 'Natasha Matos', '555.666.777.88', '(42)99829-2234', 'natashaa@gmail.com', '$2b$10$xcL527GxdPh6jPNvvF2W9ecbTr0YVWshZvf3GihiEGEyaSM3m1IlW'),
             (14, 'Nat Mat', '111.222.333.44', '(77)15987-2234', 'nata@gmail.com', '$2b$10$qxyEngSdndH1V4LdtWdePuAypISSBuG0enm.ZYwcQdyNFXbS5L3Qu'),
